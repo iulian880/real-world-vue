@@ -19,23 +19,18 @@ export default {
       event: {
         id: 1,
         title: 'Beach Cleanup',
-        date: 'Tues Aug 19, 2019',
+        date: 'Tues Aug 19, 2018',
         time: '6:00',
         attendees: [
-          {
-            id: 'abc123',
-            name: 'Adam Jahr'
-          },
-          {
-            id: 'def456',
-            name: 'Gregg Pollack'
-          }
+          { id: 'abc123', name: 'Adam Jahr' },
+          { id: 'def456', name: 'Gregg Pollack' }
         ]
       }
     }
   }
 }
 </script>
+
 <style scoped>
 .event-card {
   padding: 20px;
@@ -50,7 +45,6 @@ export default {
 .event-card > .title {
   margin: 0;
 }
-
 .event-link {
   color: black;
   text-decoration: none;
