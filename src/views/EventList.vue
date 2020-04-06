@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Events Listing</h1>
-    <EventCard />
+    <EventCard v-for="event in events" :key="event.id" :event="event" />
   </div>
 </template>
 
@@ -13,12 +13,17 @@ export default {
   components: {
     EventCard // Shorthand for ES6 EventCard: EventCard
   },
+  data() {
+    return {
+      events: []
+    }
+  },
 
   created() {
     axios
       .get('http://localhost:3000/events') // Does a get request
       .then(response => {
-        console.log(response.data) // For now, logs out the response
+        this.events = response.data // For now, logs out the response
       })
       .catch(error => {
         console.log('There was an error:', error.response) // Logs out the error
