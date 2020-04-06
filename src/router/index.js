@@ -23,11 +23,6 @@ export default new VueRouter({
       path: '/event/create',
       name: 'event-create',
       component: EventCreate
-    },
-    {
-      path: '/event/list',
-      name: 'event-list',
-      component: EventList
     }
   ]
 })
