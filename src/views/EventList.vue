@@ -6,29 +6,26 @@
 </template>
 
 <script>
-import EventService from '@/services/EventService.js'
 import EventCard from '@/components/EventCard.vue'
+import EventService from '@/services/EventService.js'
 
 export default {
   components: {
-    EventCard // Shorthand for ES6 EventCard: EventCard
+    EventCard
   },
   data() {
     return {
       events: []
     }
   },
-
   created() {
-    EventService.getEvents() // <-----
+    EventService.getEvents()
       .then(response => {
-        this.events = response.data // For now, logs out the response
+        this.events = response.data
       })
       .catch(error => {
-        console.log('There was an error:', error.response) // Logs out the error
+        console.log('There was an error:', error.response)
       })
   }
 }
 </script>
-
-<style></style>
